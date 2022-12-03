@@ -3,3 +3,4 @@ class AddUserIdToArticles < ActiveRecord::Migration[7.0]
     add_column :articles, :user_id, :integer
   end
 end
+People00@@Group@
