@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_article, only: %i[ show edit update destroy ]
 
-  # GET /articles or /articles.json
+  # GET /articles
   def index
     if params[:query].present?
       
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
       end
   end
 
-  # GET /articles/1 or /articles/1.json
+  # GET /articles/1 
   def show
   end
 
@@ -31,42 +31,38 @@ class ArticlesController < ApplicationController
   def edit
   end
 
-  # POST /articles or /articles.json
+  # POST /articles
   def create
     @article = Article.new(article_params)
 
-    @article.user = current_user #add this line
+    @article.user = current_user 
 
     respond_to do |format|
       if @article.save
         format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /articles/1 or /articles/1.json
+  # PATCH/PUT /articles/1 
   def update
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
-        format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /articles/1 or /articles/1.json
+  # DELETE /articles/1 
   def destroy
     @article.destroy
 
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
