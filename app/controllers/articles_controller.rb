@@ -1,13 +1,14 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles or /articles.json
   def index
     if params[:query].present?
+      
       @articles = Article.where("title LIKE ?", "#{params[:query]}%")
     else
-      @articles = Article.all
+      @articles = Article.by_user(current_user)
     end
 
       if turbo_frame_request?
@@ -34,10 +35,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
+    @article.user = current_user #add this line
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }
