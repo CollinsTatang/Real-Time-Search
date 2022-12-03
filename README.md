@@ -5,21 +5,18 @@
  
 ## Built With
 
-- Ruby v3.0.0
+- Ruby v2.7.0
 - Ruby on Rails v7.0
-
-## Sreenshot
-
 
 ## Live Demo
 Deployment 
-[live demo ](https://safe-ravine-92207.herokuapp.com/)
+[Coming soon ](/)
 
 
+## Uncomplete Task
 
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
+- I couldn't complete the `test` part of the project because I spend more of the time try to fix some bugs on the `turbo gem` I use within my app.
+Due to time constraint. Please consider my application I will update the test case in the feature.
 
 ### Prerequisites
 
