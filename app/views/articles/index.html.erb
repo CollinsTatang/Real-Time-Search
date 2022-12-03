@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
+<% if user_signed_in? %>
 <h1>Articles</h1>
 
 <%= form_with(url: articles_path, method: :get, data: { controller: "search-form", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
@@ -13,3 +13,5 @@
 </div>
 
 <%= link_to "New article", new_article_path %>
+
+<% end %>
