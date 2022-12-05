@@ -8,11 +8,6 @@
 - Ruby v2.7.0
 - Ruby on Rails v7.0
 
-## Live Demo
-Deployment 
-[Coming soon ](/)
-
-
 ## Uncomplete Task
 
 - I couldn't complete the `test` part of the project because I spend more of the time try to fix some bugs on the `turbo gem` I use within my app.
@@ -40,17 +35,7 @@ Setup database with:
    rails db:create
    rails db:migrate
 ```
-
-### Github Actions
-
-### Usage
-
-To use THIS  project :
-* Have ruby installed in your computer
-* [Download]https://github.com/CollinsTatang/helpjuice-project.git) or clone this repo:
-  - Clone with SSH:
-  ```
-    git@github.com:CollinsTatang/helpjuice-project.git
+https://github.com/CollinsTatang/helpjuice-project/pull/1Tatang/helpjuice-project.git
 
   ```
 - Clone with HTTPS
@@ -75,6 +60,7 @@ Open `http://localhost:3000/` in your browser.
 ```
 
 ### Deployment on heroku
+I deploy 
 - create account on heroku on your terminal:
 - heroku login
 - heroku create
