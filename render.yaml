@@ -16,5 +16,5 @@ services:
         fromDatabase:
           name: helpjuice
           property: connectionString
-      - key: 3cbb10d3554ad425bea771655307fe9a
+      - key: RAILS_MASTER_KEY
         sync: false
