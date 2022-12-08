@@ -8,6 +8,10 @@
 - Ruby v2.7.0
 - Ruby on Rails v7.0
 
+## Live Demo
+Deployment 
+[RealTime Search Article ](https://helpjuice-7kfb.onrender.com/)
+
 ## Uncomplete Task
 
 - I couldn't complete the `test` part of the project because I spend more of the time try to fix some bugs on the `turbo gem` I use within my app.
@@ -58,19 +62,6 @@ Open `http://localhost:3000/` in your browser.
 ```
     rspec --format documentation
 ```
-
-### Deployment on heroku
-I deploy 
-- create account on heroku on your terminal:
-- heroku login
-- heroku create
-- check your remote link and push for deployment : 
-    git config --list | grep heroku
-    git push heroku main or master
-- migrate your database
-    heroku run rails db:migrate
-- heroku open
-
 
 ## Author
 
