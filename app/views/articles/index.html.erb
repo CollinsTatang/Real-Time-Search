@@ -1,0 +1,19 @@
+<div style="text-align: center">
+  <p style="color: green"><%= notice %></p>
+  <% if user_signed_in? %>
+  <h1>Search Articles</h1>
+
+  <%= form_with(url: articles_path, method: :get, data: { controller: "search-form", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
+    <%= form.label :query, "Search by article title" %>
+    <%= form.text_field :query, data: { action: "input->search-form#search" } %>
+    <%= form.submit "Search" %>
+  <% end %>
+
+  <div id="articles">
+    <%= render "articles", articles: @articles %>
+  </div>
+    <br>
+  <%= link_to "New article", new_article_path %>
+
+  <% end %>
+</div>
