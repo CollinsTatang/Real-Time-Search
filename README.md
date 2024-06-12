@@ -5,12 +5,12 @@
  
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v7.0
+- Ruby v3.2.1
+- Ruby on Rails "~> 7.0.8", ">= 7.0.8.4"
 
 ## Live Demo
 Deployment 
-[RealTime Search Article ](https://helpjuice-7kfb.onrender.com/)
+[RealTime Search Article ]()
 
 ### Prerequisites
 
@@ -63,7 +63,7 @@ Open `http://localhost:3000/` in your browser.
 
 - GitHub: [@CollinsTatang](https://github.com/CollinsTatang)
 - Twitter: [@CollinsTatang1](https://twitter.com/CollinsTatang1)
-- LinkedIn: [makungong-collins](https://www.linkedin.com/in/makungong-collins-b43260190/)
+- LinkedIn: [makungong-collins](https://www.linkedin.com/in/makungang-collins/)
 
 ## 🤝 Contributing
 
