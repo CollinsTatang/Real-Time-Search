@@ -1,0 +1,2 @@
+class UserSearchAnalytic < ApplicationRecord
+end
