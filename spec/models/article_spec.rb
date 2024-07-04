@@ -22,7 +22,7 @@ RSpec.describe Article, type: :model do
   end
 
   it 'is valid without an email' do
-    subject.email= nil
+    subject.email = nil
     expect(subject).to_not be_valid
   end
 end

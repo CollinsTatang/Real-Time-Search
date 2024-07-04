@@ -8,6 +8,9 @@
 /.bundle
 /.env
 
+# Ignore node_modules directory.
+/node_modules
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
