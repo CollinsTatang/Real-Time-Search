@@ -1,3 +1,3 @@
 class UserSearchAnalytic < ApplicationRecord
-    validates :record, presence: true
+  validates :record, presence: true
 end
