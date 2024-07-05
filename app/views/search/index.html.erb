@@ -1,8 +1,8 @@
 <h1>Search Articles</h1>
 
-<%= form_tag('/search', method: 'get') do %>
-  <label for="searchInput">Search:</label>
-  <%= text_field_tag 'q', nil, placeholder: 'Search articles...', id: 'searchInput' %>
+<%= form_tag('/search', method: 'get', id: 'searchForm') do %>
+  <label for="searchInput" >Search:</label>
+  <%= text_field_tag 'record', nil, placeholder: 'Search articles...', id: 'searchInput' %>
   <%= submit_tag 'Search' %>
 <% end %>
 
