@@ -8,8 +8,8 @@ services:
   - type: web
     name: helpjuice
     plan: free
-    buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    buildCommand: "buildCommand: bundle exec rake assets:precompile"
+    startCommand: "bundle exec rails server -p $PORT"
     runtime: ruby  # Specify the runtime environment
     envVars:
       - key: DATABASE_URL
