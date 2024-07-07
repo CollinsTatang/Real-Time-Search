@@ -8,9 +8,9 @@ services:
   - type: web
     name: helpjuice
     plan: free
-    buildCommand: "buildCommand: bundle exec rake assets:precompile"
-    startCommand: "bundle exec rails server -p $PORT"
-    runtime: ruby  # Specify the runtime environment
+    buildCommand: bundle exec rake assets:precompile
+    startCommand: bundle exec rails server -p $PORT
+    runtime: ruby
     envVars:
       - key: DATABASE_URL
         fromDatabase:
