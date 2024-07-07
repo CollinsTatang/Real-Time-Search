@@ -1,7 +1,7 @@
 databases:
   - name: helpjuice
-    databaseName: helpjuice
-    user: helpjuice
+    databaseName: DEV_DB_NAME
+    user: DEV_DB_USERNAME
     plan: free
 
 services:
