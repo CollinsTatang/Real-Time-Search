@@ -1,64 +1,32 @@
-<body>
-  <h1>Search Articles</h1>
+<h1>Search</h1>
 
-  <%= form_tag('/search', method: 'post', id: 'searchForm') do %>
-    <label for="searchInput">Search:</label>
-    <%= text_field_tag 'title', nil, placeholder: 'Search articles...', id: 'searchInput' %>
-    <%= submit_tag 'Search' %>
-  <% end %>
+<input type="text" id="search-input" placeholder="Search..." />
+<div id="search-results"></div>
 
-  <ul id="search-results">
-  </ul>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var searchSegments = [];
-
-      $('#searchInput').on('input', function() {
-        var input = $(this).val().trim();
-
-        $.ajax({
-          type: 'POST',
-          url: '/search',
-          data: { query: input },
-          success: function(response) {
-            console.log(response);
-            var resultsList = $('#search-results');
-            resultsList.empty();
-
-            if (response.length > 0) {
-              response.forEach(function(result) {
-                var listItem = $('<li>').text(result.title);
-                resultsList.append(listItem);
-              });
-            } else {
-              resultsList.append($('<li>').text("No results found"));
-            }
-          },
-          error: function() {
-            resultsList.empty();
-            resultsList.append($('<li>').text("Error fetching results"));
-          }
-        });
-      });
-
-      $('#searchForm').on('submit', function(e) {
-        e.preventDefault();
-        var query = $('#searchInput').val().trim();
-        $.ajax({
-          type: 'POST',
-          url: '/search',
-          data: { query: query },
-          success: function(response) {
-            console.log(response);
-          },
-          error: function() {
-            resultsList.empty();
-            resultsList.append($('<li>').text("Error fetching results"));
-          }
-        });
-      });
+    searchInput.addEventListener('input', function() {
+      const query = this.value.trim();
+      if (query) {
+        fetch(`/search?q=${encodeURIComponent(query)}`)
+          .then(response => response.json())
+          .then(data => {
+            searchResults.innerHTML = '';
+            data.forEach(result => {
+              const resultDiv = document.createElement('div');
+              resultDiv.textContent = result.title;
+              searchResults.appendChild(resultDiv);
+            });
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      } else {
+        searchResults.innerHTML = '';
+      }
     });
-  </script>
-</body>
+  });
+</script>

@@ -3,14 +3,14 @@ databases:
     databaseName: DEV_DB_NAME
     user: DEV_DB_USERNAME
     plan: free
-
+    
 services:
   - type: web
+    runtime: ruby
     name: helpjuice
     plan: free
     buildCommand: bundle exec rake assets:precompile
     startCommand: bundle exec rails server -p $PORT
-    runtime: ruby
     envVars:
       - key: DATABASE_URL
         fromDatabase:

@@ -2,15 +2,10 @@ class SearchController < ApplicationController
   protect_from_forgery except: :index
 
   def index
-    query = params[:query]
+    query = params[:q]
 
-    if query.present? && query.match?(/\b\w+\z/)
-
-      articles = Article.new(title: query)
-      articles.save
-
-      @results = Article.where('title ILIKE ?', "%#{query}%")
-
+    if query.present?
+      @results = search_for_results(query)
       user_search_details = UserSearchAnalytic.new(record: query, ip_details: request.remote_ip)
       user_search_details.save
     else
@@ -24,5 +19,11 @@ class SearchController < ApplicationController
         render :index
       end
     end
+  end
+
+  private
+
+  def search_for_results(query)
+    Article.where('title LIKE ?', "%#{query}%")
   end
 end
