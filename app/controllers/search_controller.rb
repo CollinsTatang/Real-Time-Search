@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   protect_from_forgery except: :index
 
   def index
-    query = params[:q]
+    query = params[:query]
 
     if query.present?
       @results = search_for_results(query)
