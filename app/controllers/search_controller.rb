@@ -6,8 +6,7 @@ class SearchController < ApplicationController
 
     if query.present?
       @results = search_for_results(query)
-      user_search_details = UserSearchAnalytic.new(record: query, ip_details: request.remote_ip)
-      user_search_details.save
+      save_user_search(query)
     else
       @results = []
     end
@@ -25,5 +24,10 @@ class SearchController < ApplicationController
 
   def search_for_results(query)
     Article.where('title LIKE ?', "%#{query}%")
+  end
+  
+  def save_user_search(query)
+    user_search_details = UserSearchAnalytic.new(record: query, ip_details: request.remote_ip)
+    user_search_details.save
   end
 end

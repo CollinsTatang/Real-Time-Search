@@ -6,4 +6,15 @@ class AnalyticsController < ApplicationController
       .select('record, COUNT(*) as search_count')
       .order('search_count DESC')
   end
+
+  def search_trends
+    user_ip = request.remote_ip
+    @search_trends = UserSearchAnalytic.where(ip_details: user_ip)
+      .group(:record)
+      .select('record, COUNT(*) as search_count')
+      .order('search_count DESC').limit(10)
+    respond_to do |format|
+      format.json { render json: @search_trends }
+    end
+  end
 end
