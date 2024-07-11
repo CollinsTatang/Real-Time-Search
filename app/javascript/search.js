@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const queryData = document.createElement('td')
       queryData.textContent = user.record
       const countData = document.createElement('td')
-      countData.textContent = user.ip_detai
+      countData.textContent = user.ip_details
       tableRow.appendChild(queryData)
       tableRow.appendChild(countData)
       userTable.appendChild(tableRow)
