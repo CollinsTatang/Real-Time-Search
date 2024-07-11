@@ -1,7 +1,6 @@
-# Realtime Search
+# Realtime Search Box
 
-<h2>This project permit Users to perform search on articles in realtime</h2>
-    - Users register to the app and create articles of their choice;
+<h2>To create a realtime search box, where users search articles, and then have analytics that display users search details.</h2>
  
 ## Built With
 
@@ -10,7 +9,7 @@
 
 ## Live Demo
 Deployment 
-[RealTime Search Article ]()
+[RealTime Search Article](https://real-time-search-e2z4.onrender.com)
 
 ### Prerequisites
 
@@ -20,13 +19,10 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
-```
-```
-rails webpacker:install
 ```
 Setup database with:
 
