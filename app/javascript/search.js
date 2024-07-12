@@ -25,17 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         body: JSON.stringify({ query: lastQuery }),
       })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to record instant search')
-          }
-          return response.json()
-        })
-        .catch(error => {
-          console.error('Error:', error)
-        })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to record instant search')
+        }
+        return response.json()
+      })
+      .catch(error => {
+        console.error('Error:', error)
+      })
 
-        fetch('/userDetails')
+      fetch('/userDetails')
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to retreive user details')
