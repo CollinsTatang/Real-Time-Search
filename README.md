@@ -59,7 +59,7 @@ Open `http://localhost:3000/` in your browser.
 
 - GitHub: [@CollinsTatang](https://github.com/CollinsTatang)
 - Twitter: [@CollinsTatang1](https://twitter.com/CollinsTatang1)
-- LinkedIn: [makungong-collins](https://www.linkedin.com/in/makungang-collins/)
+- LinkedIn: [Makungang Collins Tatang](https://www.linkedin.com/in/makungang-collins/)
 
 ## 🤝 Contributing
 
